@@ -12,10 +12,10 @@ export default function Home() {
     <div className="">
       <div className="relative min-h-screen">
         {/* Background image */}
-        <div className="absolute inset-0 w-[100vw] h-full">
+        <div className="absolute inset-0 h-full w-[100vw]">
           <Image
             src={HeroBg}
-            className="w-[100vw] h-full object-cover opacity-80"
+            className="h-full w-[100vw] object-cover opacity-80"
             width={1000}
             height={1000}
             alt="Background"
@@ -26,9 +26,10 @@ export default function Home() {
         <div className="base-padding relative z-10">
           <HeroSection />
           <TrendPlantsSection />
+          <p className="text-foreground">HELLO</p>
         </div>
       </div>
-      <div className="base-padding">
+      <div className="base-padding bg-background">
         <TopSellingSection />
         <CustomerReviewSection />
         <BestSellerSection />

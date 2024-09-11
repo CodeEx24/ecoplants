@@ -7,6 +7,9 @@ import { StarFull } from "@/app/assets/svg/StarFull";
 import { StarHalf } from "@/app/assets/svg/StarHalf";
 import { StarEmpty } from "@/app/assets/svg/StarEmpty";
 
+import { motion } from "framer-motion";
+import { FADE_UP } from "@/lib/motion/motion";
+
 interface ReviewCardType {
   src: StaticImageData; // Update this type if needed
   name: string;
@@ -21,15 +24,18 @@ export default function ReviewCard({
   description,
 }: ReviewCardType) {
   return (
-    <div className="container mx-auto md:mt-4 relative w-full h-auto max-w-[350px]">
+    <motion.div
+      variants={FADE_UP}
+      className="container relative mx-auto h-full w-full max-w-[350px] md:mt-4"
+    >
       <Image
         src={Rectangle1}
-        className="top-0 absolute bg-no-repeat bg-contain z-0 object-fill opacity-80 w-full h-full "
+        className="absolute top-0 z-0 h-full w-full bg-contain bg-no-repeat object-fill opacity-80"
         width={700}
         height={700}
         alt="Card"
       />
-      <div className="relative z-10 w-full p-8 space-y-8">
+      <div className="relative z-10 flex h-full w-full flex-col justify-between space-y-8 p-8">
         <div className="flex gap-4 pt-8">
           <Avatar className="size-12 shadow-lg">
             <AvatarImage src={src.src} />
@@ -58,6 +64,6 @@ export default function ReviewCard({
         </div>
         <p className="pb-8">{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }

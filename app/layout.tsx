@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+// import "./assets/css/embla.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased bg-[#1B2316]`}>
+      <body className={`${inter.variable} bg-[#1B2316] antialiased`}>
         {children}
       </body>
     </html>

@@ -1,3 +1,4 @@
+"use client";
 import { PhPlayCircleThin } from "@/app/assets/svg/Play";
 import { Star } from "@/app/assets/svg/Star";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -9,30 +10,53 @@ import React from "react";
 import Rectangle1 from "@/app/assets/card/Rectangle1.webp";
 import Rectangle2 from "@/app/assets/card/Rectangle2.webp";
 
-import Plant1 from "@/app/assets/plants/Plant1.webp";
+import PlantHeroCarousel from "@/components/embla/PlantHeroCarousel";
+import { heroPlantsData } from "@/constants/heroPlant";
+import { EmblaOptionsType } from "embla-carousel";
+import { Browse } from "@/app/assets/svg/Browse";
+
+import Profile1 from "@/app/assets/userProfile/profile1.webp";
+
+import { motion } from "framer-motion";
+import { createFadeVariants, FADE_UP } from "@/lib/motion/motion";
+
+const OPTIONS: EmblaOptionsType = {};
 
 export default function HeroSection() {
   return (
-    <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 lg:h-[100vh] pt-20">
+    <div className="relative z-10 flex flex-col justify-between gap-4 pt-20 md:flex-row md:items-center lg:h-[100vh]">
       <div className="w-full md:w-1/2 lg:w-4/6">
-        <div className="w-full space-y-4 md:pb-[5rem]  pt-24">
-          <h1 className="w-full font-sans  font-semibold ">Breath Natureal</h1>
+        <motion.div
+          variants={FADE_UP}
+          initial="hidden"
+          animate="show"
+          className="w-full space-y-4 pt-24 md:pb-[5rem]"
+        >
+          <h1 className="w-full font-sans font-semibold">Breath Natural</h1>
           <p className="w-full md:pl-1 lg:pr-28">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <div className="flex gap-4 md:pl-1">
-            <Button variant="outline">Explore</Button>
+            <Button variant="default" className="flex items-center gap-2">
+              <Browse />
+              <p> Explore</p>
+            </Button>
             <Link href="/" className="flex items-center gap-1 text-sm">
               <PhPlayCircleThin className="size-10" />
               Live Demo
             </Link>
           </div>
-        </div>
-        <div className="hidden lg:flex md:mt-4 relative w-full h-auto max-w-[350px]">
+        </motion.div>
+        <motion.div
+          variants={createFadeVariants({ delay: 0.8 })}
+          initial="hidden"
+          animate="show"
+          className="relative hidden h-auto w-full max-w-[350px] md:mt-4 lg:flex"
+        >
           <Image
             src={Rectangle2}
-            className="top-0 absolute bg-no-repeat bg-contain z-0 object-fill opacity-80 w-full h-full "
+            className="absolute top-0 z-0 h-full w-full bg-contain bg-no-repeat object-fill opacity-80"
             width={700}
             height={700}
             alt="Card"
@@ -40,7 +64,7 @@ export default function HeroSection() {
           <div className="relative z-10 w-full p-8">
             <div className="flex gap-4">
               <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarImage src={Profile1.src} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <div className="">
@@ -58,37 +82,45 @@ export default function HeroSection() {
               eiusmod tempor incididunt...
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="container relative mx-auto mt-20 flex w-full md:w-1/2 lg:w-2/6 flex-col items-center justify-center">
-        <div className="md:flex md:mt-4 relative w-full h-auto max-w-[350px]">
+      <motion.div
+        variants={createFadeVariants({ delay: 0.4 })}
+        initial="hidden"
+        animate="show"
+        className="container relative mx-auto mt-20 flex w-full flex-col items-center justify-center md:w-1/2 lg:w-2/6"
+      >
+        <div className="relative h-auto w-full max-w-[350px] md:mt-4 md:flex">
           <Image
             src={Rectangle1}
-            className="top-0 absolute bg-no-repeat bg-contain z-0 object-fill opacity-80 w-full h-full pb-8"
-            width={1000}
-            height={1000}
+            className="absolute top-0 z-0 h-full w-full bg-contain bg-no-repeat object-fill pb-8 opacity-80"
+            width={500}
+            height={500}
             alt="Card"
           />
           <div className="relative z-10 w-full">
+            <PlantHeroCarousel plants={heroPlantsData} options={OPTIONS} />
+          </div>
+          {/* <div className="relative z-10 hidden w-full">
             <Image
               src={Plant1}
-              width={1000}
-              height={1000}
+              width={500}
+              height={500}
               alt="Plant"
-              className="relative w-full top-[-5rem] md:top-[-5rem]"
+              className="relative top-[-5rem] w-full md:top-[-5rem]"
             />
-            <div className="relative top-[-4rem]  lg:top-[-4rem] space-y-2 px-6">
+            <div className="relative top-[-4rem] space-y-2 px-6 lg:top-[-4rem]">
               <p>Trendy House Plant</p>
-              <p className="text-2xl sm:text-4xl md:text-3xl font-bold">
+              <p className="text-2xl font-bold sm:text-4xl md:text-3xl">
                 Calathea plant
               </p>
               <Button variant="outline">Buy Now</Button>
               <p className="">ASD</p>
             </div>
-          </div>
+          </div> */}
         </div>
-      </div>
+      </motion.div>
 
       {/* <div className="w-2/6"></div> */}
     </div>

@@ -1,3 +1,4 @@
+"use client";
 import React, {
   ComponentPropsWithRef,
   useCallback,
@@ -55,7 +56,7 @@ export const DotButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button type="button" {...restProps}>
+    <button type="button" className="z-20 text-white" {...restProps}>
       {children}
     </button>
   );

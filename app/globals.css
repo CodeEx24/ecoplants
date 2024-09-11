@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #1b2316;
-  --foreground: #171717;
+  /* --background: #1b2316;
+  --foreground: #171717; */
 
   --font-sm: 0.875rem; /* 14px */
   --font-md: 1rem; /* 16px */
@@ -17,16 +17,16 @@
   --font-6xl: 3rem; /* 30px */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground);
+  background: var(--background); */
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -38,22 +38,31 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
+    /* TEXT COLOR */
+
+    /* ALL BUTTONS SETTINGS FOREGROUND */
+    --primary-foreground: 0 0% 0%; /*white*/
+    --secondary-foreground: 30.88, 60.18%, 55.69%; /*brown*/
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+
+    --primary: 0, 0%, 98%; /**/
+    --secondary: 168.13, 100%, 17.84%;
+    --muted: 0 0% 96.1%;
+    --accent: 0 0% 96.1%;
+    --destructive: 0 84.2% 60.2%;
+
+    /* GENERAL SETTINGS */
+    --foreground: 0, 0%, 95%; /*white primary text color*/
+    --background: 0, 0%, 0%; /*first bg green*/
+    --primary-background: 142.86, 18.92%, 21.76%; /*green secondary*/
+
+    --card: 0, 0%, 3.92%;
+    --card-foreground: 0, 0%, 100%;
+    --popover: 0, 0%, 3.92%;
+    --popover-foreground: 0, 0%, 100%;
+
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
@@ -102,7 +111,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply overflow-x-hidden bg-background text-foreground;
   }
 
   body {
@@ -153,6 +162,105 @@ body {
   }
 
   h1 {
-    @apply text-4xl md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl font-semibold;
+    @apply text-4xl font-semibold md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl;
+  }
+
+  /* EMBLA */
+  /* EMBLA SETTINGS */
+  .embla {
+    @apply mx-auto max-w-[48rem];
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+  }
+
+  .embla__viewport {
+    @apply overflow-x-hidden overflow-y-clip;
+  }
+
+  .embla__container {
+    @apply flex touch-pan-y touch-pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+
+  .embla__slide {
+    @apply min-w-0 flex-none transform pl-[var(--slide-spacing)];
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+  }
+
+  .embla__slide__img {
+    @apply block h-[var(--slide-height)] w-full rounded-[1.8rem] object-cover;
+  }
+
+  .embla__controls {
+    @apply mb-[2.4rem] gap-[1.2rem];
+  }
+
+  .embla__buttons {
+    @apply w-full items-center gap-[0.6rem];
+  }
+
+  .embla__button {
+    @apply z-10 m-0 flex items-center justify-center rounded-full border-0 bg-transparent p-0 text-[var(--text-body)] shadow-inner;
+    cursor: pointer;
+    touch-action: manipulation;
+    appearance: none;
+    width: 3.6rem;
+    height: 3.6rem;
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  }
+
+  .embla__button:disabled {
+    color: var(--detail-high-contrast);
+  }
+
+  .embla__button__svg {
+    @apply h-[35%] w-[35%];
+  }
+
+  .embla__dots {
+    @apply flex flex-wrap items-center justify-center;
+    margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+  }
+
+  .embla__dot {
+    @apply m-0 flex inline-flex h-[2.6rem] w-[2.6rem] cursor-pointer touch-manipulation appearance-none items-center justify-center rounded-full border-0 bg-transparent p-0;
+  }
+
+  /* .embla__dot:after {
+  @apply shadow-inner shadow-[var(--detail-medium-contrast)] w-[1.4rem] h-[1.4rem] rounded-full flex items-center content-[''];
+} */
+  .embla__dot--selected:after {
+    @apply shadow-inner shadow-[var(--text-body)];
+  }
+
+  .embla__lazy-load {
+    @apply relative h-full;
+  }
+
+  .embla__lazy-load__spinner {
+    @apply border-[rgba(var(--text-high-contrast-rgb-value), 0.2)] absolute inset-0 m-auto inline-flex h-[5rem] w-[5rem] animate-[loading_1.1s_infinite_linear] rounded-full border-[0.4rem] border-l-[0.4rem] border-[var(--text-high-contrast)] text-[1rem] text-[9999em];
+  }
+
+  .embla__lazy-load__spinner:after {
+    @apply h-[5rem] w-[5rem] rounded-full;
+  }
+
+  .embla__lazy-load__img {
+    @apply opacity-0 transition-opacity duration-200 ease-in-out;
+  }
+
+  .embla__lazy-load--has-loaded .embla__lazy-load__img {
+    @apply opacity-100;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

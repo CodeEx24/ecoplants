@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
@@ -6,6 +7,10 @@ import Rectangle3 from "@/app/assets/card/Rectangle3.webp";
 import { Button } from "@/components/ui/button";
 import { Shopping } from "@/app/assets/svg/Shopping";
 import { PlantsDetailsType } from "@/interface/ISellingPlants";
+import { Browse } from "@/app/assets/svg/Browse";
+
+import { motion } from "framer-motion";
+import { FADE_UP } from "@/lib/motion/motion";
 
 export default function TrendPlants({
   isReverse = true,
@@ -16,12 +21,18 @@ export default function TrendPlants({
   src,
 }: PlantsDetailsType) {
   return (
-    <div className="container relative mx-auto mb-10 h-full w-full max-w-[350px] md:max-w-full">
+    <motion.div
+      variants={FADE_UP}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0 }}
+      className="container relative mx-auto mb-10 h-full w-full max-w-[350px] md:max-w-full"
+    >
       <Image
         src={Rectangle3}
         className="absolute top-0 z-0 h-full w-full rounded-2xl bg-contain bg-no-repeat object-cover opacity-80 md:object-fill"
-        width={1000}
-        height={1000}
+        width={400}
+        height={400}
         alt="Card"
       />
       <div
@@ -30,8 +41,8 @@ export default function TrendPlants({
         <div className="w-full md:h-full md:w-1/2">
           <Image
             src={src}
-            width={1000}
-            height={1000}
+            width={200}
+            height={200}
             alt="Plant"
             className="relative top-[-2rem] w-full object-cover object-bottom px-4 md:top-[-8rem] md:h-[500px] md:max-h-[500px] md:object-contain md:px-0"
           />
@@ -47,14 +58,16 @@ export default function TrendPlants({
               ${oldPrice}
             </p>
           </div>
-          <div className="space-x-4">
-            <Button variant="outline">Explore</Button>
-            <Button variant="outline">
-              <Shopping />
+          <div className="flex items-center gap-2">
+            <Button variant="default" className="flex items-center gap-2">
+              <Shopping /> <p>Buy Now</p>
+            </Button>
+            <Button variant="outline" className="flex items-center gap-2">
+              <Browse /> <p>Explore</p>
             </Button>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

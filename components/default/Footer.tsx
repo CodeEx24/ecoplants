@@ -26,7 +26,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="space-y-6">
-          <p className="text-lg font-bold">Quick Link's</p>
+          <p className="text-lg font-bold">Quick Link&apos;s</p>
           <p>Home</p>
           <p>Type’s Of plant’s</p>
           <p>Contact</p>
@@ -52,7 +52,7 @@ export default function Footer() {
           JBDevWorks
         </Link>
         <Link href="https://jocarlbasco.vercel.app/">
-          All rights reserved Ecoplants ({new Date().getFullYear()}){" "}
+          All rights reserved Ecoplants ({new Date().getFullYear()})
         </Link>
       </div>
     </footer>

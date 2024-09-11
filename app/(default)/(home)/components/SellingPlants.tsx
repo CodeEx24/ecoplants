@@ -6,6 +6,9 @@ import Rectangle1 from "@/app/assets/card/Rectangle1.webp";
 import { Button } from "@/components/ui/button";
 import { Shopping } from "@/app/assets/svg/Shopping";
 import { PlantsDetailsType } from "@/interface/ISellingPlants";
+import { FADE_UP } from "@/lib/motion/motion";
+
+import { motion } from "framer-motion";
 
 export default function SellingPlants({
   name,
@@ -15,20 +18,23 @@ export default function SellingPlants({
   src,
 }: PlantsDetailsType) {
   return (
-    <div className="flex h-full w-full items-center justify-center">
+    <motion.div
+      variants={FADE_UP}
+      className="flex h-full w-full items-center justify-center"
+    >
       <div className="relative h-full w-full max-w-[330px]">
         <Image
           src={Rectangle1}
           className="absolute top-0 z-0 h-full w-full bg-contain bg-no-repeat object-fill pb-8 opacity-80"
-          width={1000}
-          height={1000}
+          width={500}
+          height={500}
           alt="Card"
         />
         <div className="relative z-10 w-full md:mt-8 lg:mt-4">
           <Image
             src={src}
-            width={1000}
-            height={1000}
+            width={500}
+            height={500}
             alt="Plant"
             className="relative top-[-5rem] h-[200px] w-full object-contain md:top-[-6rem] md:h-[300px] xl:h-[400px] xl:object-cover"
           />
@@ -52,6 +58,6 @@ export default function SellingPlants({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
