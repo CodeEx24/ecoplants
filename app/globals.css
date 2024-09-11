@@ -47,7 +47,7 @@ body {
     --accent-foreground: 0 0% 9%;
     --destructive-foreground: 0 0% 98%;
 
-    --primary: 0, 0%, 98%; /**/
+    --primary: 0, 0%, 98%; /* black */
     --secondary: 168.13, 100%, 17.84%;
     --muted: 0 0% 96.1%;
     --accent: 0 0% 96.1%;
@@ -55,8 +55,9 @@ body {
 
     /* GENERAL SETTINGS */
     --foreground: 0, 0%, 95%; /*white primary text color*/
-    --background: 0, 0%, 0%; /*first bg green*/
+    --background: 96.92, 22.81%, 11.18%; /*first bg green*/
     --primary-background: 142.86, 18.92%, 21.76%; /*green secondary*/
+    --secondary-background: 30.88, 60.18%, 55.69%; /*brown secondary*/
 
     --card: 0, 0%, 3.92%;
     --card-foreground: 0, 0%, 100%;
@@ -168,7 +169,7 @@ body {
   /* EMBLA */
   /* EMBLA SETTINGS */
   .embla {
-    @apply mx-auto max-w-[48rem];
+    @apply mx-auto max-w-full; /* Adjust max width to full */
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;
@@ -189,6 +190,14 @@ body {
     flex: 0 0 var(--slide-size);
   }
 
+  /* ADJUSTABLE SIZE */
+  .embla__slide_logo {
+    @apply min-w-0 flex-none transform pl-[var(--slide-spacing)] md:w-[25%];
+    transform: translate3d(0, 0, 0);
+    /* flex: 0 0 var(--slide-size); */
+  }
+
+  .e,
   .embla__slide__img {
     @apply block h-[var(--slide-height)] w-full rounded-[1.8rem] object-cover;
   }

@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="space-y-6">
           <p className="text-lg font-bold">For Every Update.</p>
           <Input placeholder="Enter email" />
-          <Button variant="secondary">Subscribe</Button>
+          <Button variant="default">Subscribe</Button>
         </div>
       </div>
       <div className="mt-8 flex w-full justify-between">

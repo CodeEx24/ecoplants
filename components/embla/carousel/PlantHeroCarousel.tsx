@@ -2,11 +2,11 @@
 import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { useDotButton } from "./EmblaCarouselDotButton";
-import PlantHeroCard from "./card/PlantHeroCard";
+import { useDotButton } from "../EmblaCarouselDotButton";
+import PlantHeroCard from "../card/PlantHeroCard";
 import { StaticImageData } from "next/image";
-import EmblaButtons from "./EmblaButtons";
-import EmblaDots from "./EmblaDots";
+import EmblaButtons from "../EmblaButtons";
+import EmblaDots from "../EmblaDots";
 
 type HeroPlantType = {
   name: string;

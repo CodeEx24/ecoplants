@@ -10,7 +10,7 @@ import React from "react";
 import Rectangle1 from "@/app/assets/card/Rectangle1.webp";
 import Rectangle2 from "@/app/assets/card/Rectangle2.webp";
 
-import PlantHeroCarousel from "@/components/embla/PlantHeroCarousel";
+import PlantHeroCarousel from "@/components/embla/carousel/PlantHeroCarousel";
 import { heroPlantsData } from "@/constants/heroPlant";
 import { EmblaOptionsType } from "embla-carousel";
 import { Browse } from "@/app/assets/svg/Browse";

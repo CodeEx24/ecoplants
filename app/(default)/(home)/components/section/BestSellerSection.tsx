@@ -2,7 +2,7 @@
 import SectionTitle from "@/components/default/SectionTitle";
 import React from "react";
 
-import BestPlantCarousel from "@/components/embla/BestPlantCarousel";
+import BestPlantCarousel from "@/components/embla/carousel/BestPlantCarousel";
 import { bestPlantsData } from "@/constants/bestPlant";
 
 import { motion } from "framer-motion";

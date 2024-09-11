@@ -26,10 +26,9 @@ export default function Home() {
         <div className="base-padding relative z-10">
           <HeroSection />
           <TrendPlantsSection />
-          <p className="text-foreground">HELLO</p>
         </div>
       </div>
-      <div className="base-padding bg-background">
+      <div className="base-padding">
         <TopSellingSection />
         <CustomerReviewSection />
         <BestSellerSection />
