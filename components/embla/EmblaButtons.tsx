@@ -27,7 +27,7 @@ export default function EmblaButtons({
       <div className="flex justify-start">
         <button
           onClick={onPrevButtonClick}
-          disabled={prevBtnDisabled}
+          // disabled={prevBtnDisabled}
           className={`duration-150 ${prevBtnDisabled ? "text-gray-600" : "hover:scale-75 hover:bg-transparent hover:text-white/80"}`}
         >
           <ArrowBack />
@@ -37,7 +37,7 @@ export default function EmblaButtons({
       <div className="flex justify-end">
         <button
           onClick={onNextButtonClick}
-          disabled={nextBtnDisabled}
+          // disabled={nextBtnDisabled}
           className={`duration-150 ${nextBtnDisabled ? "text-gray-600" : "hover:scale-75 hover:bg-transparent hover:text-white/80"}`}
         >
           <ArrowForward />

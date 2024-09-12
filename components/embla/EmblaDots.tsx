@@ -2,7 +2,7 @@ import React from "react";
 import { DotButton } from "./EmblaCarouselDotButton";
 
 interface EmblaDotsProps {
-  key: string;
+  keyDiscriminator: string;
   data: number[];
   selectedIndex: number;
   onDotButtonClick: (index: number) => void;
@@ -10,17 +10,17 @@ interface EmblaDotsProps {
 
 const EmblaDots: React.FC<EmblaDotsProps> = ({
   data,
-  key,
+  keyDiscriminator,
   selectedIndex,
   onDotButtonClick,
 }) => {
-  console.log("DATA: ", data);
+  if (!data) return;
   return (
     <div className="embla__dots">
       {data &&
         data.map((_, index: number) => (
           <DotButton
-            key={`${key}${index}`}
+            key={`${index}${keyDiscriminator}`}
             onClick={() => onDotButtonClick(index)}
             className={`embla__dot${index === selectedIndex ? "embla__dot--selected" : ""}`}
           >
