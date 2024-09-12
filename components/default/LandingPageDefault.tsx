@@ -17,7 +17,7 @@ export default function LandingPageDefault({
 }: LandingPageType) {
   return (
     <>
-      <div className="relative h-[60vh] w-[100vw]">
+      <div className="relative h-[50vh] w-[100vw]">
         <Image
           src={image.src}
           className="h-full w-[100vw] object-cover"
@@ -32,7 +32,7 @@ export default function LandingPageDefault({
         variants={FADE_UP}
         initial="hidden"
         animate="show"
-        className="absolute top-0 z-10 flex h-[60vh] w-[100vw] items-center justify-center"
+        className="absolute top-0 z-10 flex h-[55vh] w-[100vw] items-center justify-center"
       >
         <h3 className="z-20 font-bold">{title}</h3>
       </motion.div>

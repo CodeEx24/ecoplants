@@ -7,7 +7,7 @@ import Ecoplants from "@/app/assets/logo/ecoplants.webp";
 
 export default function Footer() {
   return (
-    <footer className="base-padding flex flex-wrap items-center justify-center gap-6 bg-[#222C1D] py-20">
+    <footer className="base-padding flex flex-wrap items-center justify-center gap-6 bg-[#222C1D] px-8 py-20">
       <div className="grid w-full grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3">
         <div className="space-y-8">
           <div className="flex items-center gap-2">
@@ -38,20 +38,20 @@ export default function Footer() {
           <Button variant="default">Subscribe</Button>
         </div>
       </div>
-      <div className="mt-8 flex w-full justify-between">
-        <div className="flex gap-8">
+      <div className="mt-8 flex w-full flex-wrap justify-between space-y-4">
+        <div className="flex w-full gap-8">
           <p className="text-lg font-bold">FB</p>
           <p className="text-lg font-bold">TW</p>
           <p className="text-lg font-bold">LI</p>
         </div>
         <Link
           href="https://jocarlbasco.vercel.app/"
-          className="underline"
+          className="w-full underline"
           target="_blank"
         >
           JBDevWorks
         </Link>
-        <Link href="https://jocarlbasco.vercel.app/">
+        <Link href="https://jocarlbasco.vercel.app/" className="w-full">
           All rights reserved Ecoplants ({new Date().getFullYear()})
         </Link>
       </div>

@@ -4,6 +4,9 @@ import { Twitter } from "@/app/assets/svg/socials/Twitter";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
+import { motion } from "framer-motion";
+import { FADE_UP } from "@/lib/motion/motion";
+
 interface TeamDetailsType {
   image: StaticImageData;
   name: string;
@@ -18,7 +21,10 @@ export default function TeamDetails({
   isEnd = false,
 }: TeamDetailsType) {
   return (
-    <div className={`relative flex justify-center ${isEnd && "md:items-end"}`}>
+    <motion.div
+      variants={FADE_UP}
+      className={`relative flex justify-center ${isEnd && "md:items-end"}`}
+    >
       <div
         className={`group relative h-[250px] w-[250px] rounded-full md:h-full md:w-full lg:h-60 lg:w-60 ${isEnd ? "bottom-0" : "top-0"}`}
       >
@@ -54,6 +60,6 @@ export default function TeamDetails({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

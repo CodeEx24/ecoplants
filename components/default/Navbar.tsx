@@ -10,6 +10,7 @@ import { createFadeVariants } from "@/lib/motion/motion";
 import { usePathname } from "next/navigation";
 import CartSheet from "./others/CartSheet";
 import MenuSheet from "./others/MenuSheet";
+import { navBarLinks } from "@/constants/navBarLink";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -22,7 +23,7 @@ export default function Navbar() {
       animate="show"
       className="base-padding absolute left-0 top-0 z-30 flex h-20 w-full items-center justify-between bg-transparent backdrop-blur-md"
     >
-      <div className="flex items-center gap-2">
+      <Link href={"/"} className="flex items-center gap-2">
         <Image
           src={Ecoplants}
           alt="Ecoplants"
@@ -31,35 +32,20 @@ export default function Navbar() {
           height={40}
         />
         <h6 className="font-extrabold">Ecoplants</h6>
-      </div>
+      </Link>
       <div className="relative z-50 hidden sm:flex sm:gap-4 md:gap-8 lg:gap-12">
-        <Link
-          href="/"
-          className={`transition hover:text-secondary-foreground hover:opacity-90 ${pathname === "/" && "text-secondary-foreground"}`}
-        >
-          Home
-        </Link>
-        <Link
-          href="/shop"
-          className={`transition hover:text-secondary-foreground hover:opacity-90 ${pathname === "/plant-types" && "text-secondary-foreground"}`}
-        >
-          Shop
-        </Link>
-        <Link
-          href="/about"
-          className={`transition hover:text-secondary-foreground hover:opacity-90 ${pathname === "/about" && "text-secondary-foreground"}`}
-        >
-          About
-        </Link>
-        <Link
-          href="/contact"
-          className={`transition hover:text-secondary-foreground hover:opacity-90 ${pathname === "/contact" && "text-secondary-foreground"}`}
-        >
-          Contact
-        </Link>
+        {navBarLinks.map((link, index) => (
+          <Link
+            key={`${index}${link.text}`}
+            href={link.href}
+            className={`font-semibold transition hover:text-secondary-foreground hover:opacity-90 ${pathname === link.href && "text-secondary-foreground"}`}
+          >
+            {link.text}
+          </Link>
+        ))}
       </div>
-      <div className="flex gap-4">
-        <SearchIc className="size-6" />
+      <div className="flex gap-3 sm:gap-4">
+        <SearchIc className="size-5 sm:size-6" />
         <CartSheet />
         <MenuSheet />
       </div>
