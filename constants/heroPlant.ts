@@ -5,23 +5,23 @@ import Plant4 from "@/app/assets/plants/Plant4.webp";
 
 export const heroPlantsData = [
   {
-    name: "Calathea plant",
-    subname: "Lorem ipsum dolor sit ",
+    name: "Calathea Plant",
+    subname: "Vibrant, patterned foliage",
     src: Plant1,
   },
   {
-    name: "Monstera plant",
-    subname: "Fusce vehicula dolor",
+    name: "Monstera Plant",
+    subname: "Bold, tropical leaves",
     src: Plant2,
   },
   {
-    name: "Snake plant",
-    subname: "Vestibulum auctor dapibus neque",
+    name: "Snake Plant",
+    subname: "Hardy and air-purifying",
     src: Plant3,
   },
   {
     name: "Fiddle Leaf Fig",
-    subname: "Aliquam erat volutpat. Nam dui mi",
+    subname: "Elegant, large leaves",
     src: Plant4,
   },
 ];

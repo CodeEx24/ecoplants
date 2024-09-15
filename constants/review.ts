@@ -8,21 +8,20 @@ export const reviewData = [
     src: Profile3,
     starCount: 4,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "Had a great experience overall. The service was prompt, and the quality exceeded expectations!",
   },
-
   {
     name: "Floyd Cruz",
     src: Profile2,
     starCount: 5,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "Absolutely outstanding! The attention to detail and customer service was top-notch.",
   },
   {
     name: "John Doe",
     src: Profile1,
     starCount: 4.5,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "Very pleased with the service. Everything went smoothly, and I’ll definitely be coming back.",
   },
 ];
