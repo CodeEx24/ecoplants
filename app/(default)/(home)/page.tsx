@@ -1,11 +1,28 @@
+import React, { Suspense, lazy } from "react";
+import Image from "next/image";
 import HeroBg from "@/app/assets/main/herobg.webp";
 
-import Image from "next/image";
-import HeroSection from "./components/section/HeroSection";
-import TrendPlantsSection from "./components/section/TrendPlantsSection";
-import TopSellingSection from "./components/section/TopSellingSection";
-import CustomerReviewSection from "./components/section/CustomerReviewSection";
-import BestSellerSection from "./components/section/BestSellerSection";
+// Lazy load components
+const HeroSection = lazy(() => import("./components/section/HeroSection"));
+const TrendPlantsSection = lazy(
+  () => import("./components/section/TrendPlantsSection"),
+);
+const TopSellingSection = lazy(
+  () => import("./components/section/TopSellingSection"),
+);
+const CustomerReviewSection = lazy(
+  () => import("./components/section/CustomerReviewSection"),
+);
+const BestSellerSection = lazy(
+  () => import("./components/section/BestSellerSection"),
+);
+
+// Fallback component for loading state
+const LoadingFallback = () => (
+  <div className="flex min-h-screen items-center justify-center">
+    <p>Loading...</p>
+  </div>
+);
 
 export default function Home() {
   return (
@@ -24,14 +41,18 @@ export default function Home() {
 
         {/* Content */}
         <div className="base-padding relative z-10">
-          <HeroSection />
-          <TrendPlantsSection />
+          <Suspense fallback={<LoadingFallback />}>
+            <HeroSection />
+            <TrendPlantsSection />
+          </Suspense>
         </div>
       </div>
       <div className="base-padding">
-        <TopSellingSection />
-        <CustomerReviewSection />
-        <BestSellerSection />
+        <Suspense fallback={<LoadingFallback />}>
+          <TopSellingSection />
+          <CustomerReviewSection />
+          <BestSellerSection />
+        </Suspense>
       </div>
     </div>
   );

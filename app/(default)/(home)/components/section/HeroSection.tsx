@@ -95,30 +95,14 @@ export default function HeroSection() {
           <Image
             src={Rectangle1}
             className="absolute top-0 z-0 h-full w-full bg-contain bg-no-repeat object-fill pb-8 opacity-80"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             alt="Card"
+            priority
           />
           <div className="relative z-10 w-full">
             <PlantHeroCarousel plants={heroPlantsData} options={OPTIONS} />
           </div>
-          {/* <div className="relative z-10 hidden w-full">
-            <Image
-              src={Plant1}
-              width={500}
-              height={500}
-              alt="Plant"
-              className="relative top-[-5rem] w-full md:top-[-5rem]"
-            />
-            <div className="relative top-[-4rem] space-y-2 px-6 lg:top-[-4rem]">
-              <p>Trendy House Plant</p>
-              <p className="text-2xl font-bold sm:text-4xl md:text-3xl">
-                Calathea plant
-              </p>
-              <Button variant="outline">Buy Now</Button>
-              <p className="">ASD</p>
-            </div>
-          </div> */}
         </div>
       </motion.div>
 

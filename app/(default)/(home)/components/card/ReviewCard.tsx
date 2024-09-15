@@ -26,7 +26,7 @@ export default function ReviewCard({
   return (
     <motion.div
       variants={FADE_UP}
-      className="container relative mx-auto h-full w-full max-w-[350px] md:mt-4"
+      className="container relative mx-auto h-full w-full max-w-[350px] sm:max-w-full md:mt-4"
     >
       <Image
         src={Rectangle1}

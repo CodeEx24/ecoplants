@@ -22,7 +22,7 @@ export default function SellingPlants({
       variants={FADE_UP}
       className="flex h-full w-full items-center justify-center"
     >
-      <div className="relative h-full w-full max-w-[330px]">
+      <div className="relative h-full w-full max-w-[330px] sm:max-w-full">
         <Image
           src={Rectangle1}
           className="absolute top-0 z-0 h-full w-full bg-contain bg-no-repeat object-fill pb-8 opacity-80"
