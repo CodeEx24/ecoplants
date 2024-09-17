@@ -50,7 +50,7 @@ const PlantHeroCarousel: React.FC<PropType> = (props) => {
 
       <div className="embla__controls container mx-auto mt-2 flex h-12 w-full items-center justify-center">
         <EmblaDots
-          key="heroPlants"
+          keyDiscriminator="heroPlants"
           data={plantsData}
           selectedIndex={selectedIndex}
           onDotButtonClick={onDotButtonClick}

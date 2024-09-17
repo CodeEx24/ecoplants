@@ -18,8 +18,8 @@ export default function PlantHeroCard({
       <div className="max-h-64 w-full">
         <Image
           src={src}
-          width={500}
-          height={500}
+          width={300}
+          height={300}
           alt="Plant"
           className="relative top-0 mx-auto h-64 w-64 object-cover object-center"
         />
