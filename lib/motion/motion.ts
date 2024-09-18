@@ -12,7 +12,7 @@ export const createFadeVariants = ({
   direction = "up",
   delay,
 }: FadeVariantConfig): Variants => {
-  let movement = { x: 0, y: 0 };
+  const movement = { x: 0, y: 0 };
 
   switch (direction) {
     case "up":
